@@ -3,6 +3,7 @@ import json
 import numpy as np
 import io
 from PIL import Image
+from pydantic import env_settings
 
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
@@ -20,7 +21,7 @@ app.config['CORS_HEADERS'] = ['Content-Type', 'Access-Control-Allow-Origin']
 
 @app.route('/')
 def home():
-    return "<h1>Hello World</h1>"
+    return "<h1>Server for OCR project</h1>"
 
 
 @app.route('/upload', methods=['POST','GET'])
@@ -64,4 +65,4 @@ def upload_file():
         return response
 
 if __name__ == '__main__':
-   app.run(debug=True)
+    app.run()
