@@ -1,5 +1,6 @@
 # Importing necessary libraries
 from tensorflow.keras import Model
+import pytesseract
 import cv2
 import numpy as np
 
@@ -140,7 +141,8 @@ def predict_text(image):
         for p in x:
             if int(p) != -1:
                 predicted_text += char_list[int(p)]
-
+                
+    predicted_text = pytesseract.image_to_string(image)
     return predicted_text
 
 

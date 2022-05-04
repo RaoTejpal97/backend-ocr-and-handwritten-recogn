@@ -49,8 +49,7 @@ def upload_file():
         
         if input_type == "Handwriting Recognition":
 
-            # predicted_text = predict_text(image_np)
-            predicted_text = pytesseract.image_to_string(image_np)
+            predicted_text = predict_text(image_np)
         
         else:
             ocr_recognition = InvoiceOCR(image_name,image)
